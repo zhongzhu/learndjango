@@ -14,7 +14,7 @@ git clone https://github.com/zhongzhu/learndjango.git
 create virtual env for python
 ```
 cd learndjango
-python3 -m venv venv
+python -m venv venv
 ```
 
 activate virtual env
@@ -24,7 +24,18 @@ venv\Scripts\activate.bat
 
 install Python libraries
 ```
+set https_proxy=<proxy_addr>  # if you're behind a firewall
 pip3 install -r requirements.txt
+```
+
+create an admin user
+```
+$ python manage.py createsuperuser
+```
+
+make the migration to initiate database tables
+```
+python manage.py migrate
 ```
 
 start the development server
